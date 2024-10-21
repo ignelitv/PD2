@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PD2</string>
     <string name="message_not_implemented">Not implemented!</string>
+    <string name="please_enter_text">Please enter text</string>
     <string-array name="counting_options">
         <item>Words</item>
         <item>Characters</item>
