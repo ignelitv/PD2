@@ -51,14 +51,16 @@ public class MainActivity extends AppCompatActivity {
         String userInputPhrase = this.edUserInput.getText().toString();
 
         if (userInputPhrase.trim().isEmpty()) {
-            Toast.makeText(this, "Please enter text", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_text, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (this.spCountOption.getSelectedItem().toString().equals("Characters")) {
+        int selectedItemPosition = spCountOption.getSelectedItemPosition();
+
+        if (selectedItemPosition == 1) {
             int result = TextCounter.getCharsCount(userInputPhrase);
             this.tvResult.setText(String.valueOf(result));
-        } else if (this.spCountOption.getSelectedItem().toString().equals("Words")) {
+        } else if (selectedItemPosition == 0) {
             int result = TextCounter.getWordsCount(userInputPhrase);
             this.tvResult.setText(String.valueOf(result));
         } else {
